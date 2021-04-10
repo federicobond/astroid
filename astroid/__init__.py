@@ -168,5 +168,3 @@ if BRAIN_MODULES_DIR not in sys.path:
 for module in os.listdir(BRAIN_MODULES_DIR):
     if module.endswith(".py"):
         __import__(module[:-3])
-
-__all__ = ["__version__"]
