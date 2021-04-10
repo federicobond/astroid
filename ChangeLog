@@ -6,6 +6,18 @@ What's New in astroid 2.6.0?
 ============================
 Release Date: TBA
 
+What's New in astroid 2.5.4?
+============================
+Release Date: TBA
+
+* The packaging is now done via setuptools exclusively. ``doc``, ``tests``, and ``Changelog`` are
+  not packaged anymore - reducing the size of the package greatly. Debian packaging is now  (officially) done in
+  https://salsa.debian.org/python-team/packages/astroid. ``__pkginfo__`` now
+  only contain ``__version__`` (also accessible with ``astroid.__version__``), other meta-information are still
+  accessible with ``import importlib;metadata.metadata('astroid')``.
+
+* COPYING was removed in favor of COPYING.LESSER and the latter was renamed to LICENSE to make more apparent
+  that the code is licensed under LGPLv2.
 
 What's New in astroid 2.5.3?
 ============================
