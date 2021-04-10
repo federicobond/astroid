@@ -54,7 +54,7 @@ del _Context
 
 
 # pylint: disable=wrong-import-order,wrong-import-position
-from .__pkginfo__ import version as __version__
+from .__pkginfo__ import __version__
 
 # WARNING: internal imports order matters !
 
@@ -168,3 +168,5 @@ if BRAIN_MODULES_DIR not in sys.path:
 for module in os.listdir(BRAIN_MODULES_DIR):
     if module.endswith(".py"):
         __import__(module[:-3])
+
+__all__ = ["__version__"]
