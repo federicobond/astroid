@@ -17,7 +17,6 @@ init:
   - ps: echo $env:TOXENV
   - ps: ls C:\Python*
   - ps: mkdir C:\tmp
-  - ps: set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
 
 install:
   - python -m pip install -U setuptools pip tox wheel virtualenv

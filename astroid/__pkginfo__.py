@@ -26,15 +26,21 @@
 
 """astroid packaging information"""
 
-from typing import Optional
+try:
+    from typing import Optional
+except ImportError:
+    # Python 2 compatibility for appveyor
+    # TODO: remove during migration to github actions # pylint: disable=fixme
+    pass
 
 __version__ = "2.6.0"
 # For an official release, use 'alpha_version = False' and 'dev_version = None'
-alpha_version: bool = False  # Release will be an alpha version if True (ex: '1.2.3a6')
-dev_version: Optional[int] = 1
+alpha_version = False  # Release will be an alpha version if True (ex: '1.2.3a6')
+dev_version = 1  # type: Optional[int]
 
 if dev_version is not None:
+    v = str(dev_version)
     if alpha_version:
-        __version__ += f"a{dev_version}"
+        __version__ += v + "a"
     else:
-        __version__ += f".dev{dev_version}"
+        __version__ += v + ".dev"
