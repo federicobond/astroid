@@ -17,14 +17,15 @@ init:
   - ps: echo $env:TOXENV
   - ps: ls C:\Python*
   - ps: mkdir C:\tmp
+  - ps: set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+
 install:
-  - "powershell ./appveyor/install.ps1"
-  - "python -m pip install -U setuptools pip tox wheel virtualenv"
-  - "python -m pip --version"
-  - "python -m tox --version"
+  - python -m pip install -U setuptools pip tox wheel virtualenv
+  - python -m pip --version
+  - python -m tox --version
 
 test_script:
-  - "python -m tox"
+  - python -m tox
 
 on_failure:
   - ps: dir "env:"
